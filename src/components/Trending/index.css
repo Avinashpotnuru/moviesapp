@@ -1,0 +1,60 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.slick-container {
+  width: 50vw;
+  margin-top: 10px;
+  padding: 0px;
+}
+
+.logo-image {
+  margin: 10px;
+  height: 180px;
+  width: 180px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .slick-container {
+    width: 60vw;
+  }
+  .logo-image {
+    height: 100px;
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .logo-image {
+    margin: 10px;
+    height: 100px;
+    width: 100px;
+  }
+  .slick-container {
+    width: 70vw;
+    margin-top: 10px;
+    padding: 0px;
+  }
+}
+
+/* You can change the CSS color to style the Next and 
+Previous Arrow buttons according to your project */
+
+.slick-prev:before,
+.slick-next:before {
+  color: white;
+}
+.trending-heading {
+  color: white;
+  align-self: flex-start;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .trending-heading {
+    font-size: 14px;
+  }
+}

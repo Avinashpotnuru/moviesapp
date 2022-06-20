@@ -1,0 +1,10 @@
+.failureContainer {
+  background-image: url('https://res.cloudinary.com/dtjcxf7z5/image/upload/v1650260401/Mini%20Project%20Netflix%20Clone/failure_view_bg_a1zuq5.png');
+  background-size: cover;
+  height: 100vh;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

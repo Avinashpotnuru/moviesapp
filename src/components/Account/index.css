@@ -1,0 +1,52 @@
+.account-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: black;
+  height: 100vh;
+}
+
+.account-container-2 {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding-left: 40px;
+  padding-right: 40px;
+  line-height: 1;
+  height: 90vh;
+}
+
+.logout-button {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 14px;
+  color: #ffffff;
+  height: 40px;
+  width: 150px;
+  margin-top: 20px;
+  margin-bottom: 2px;
+  background-color: #e50914;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  align-self: center;
+}
+.account-element {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  border-bottom: 1px solid grey;
+}
+.header-element {
+  align-self: flex-start;
+  margin-right: 20px;
+  color: #94a3b8;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 31px;
+}
+.ultra-hd {
+  border: 1px solid grey;
+  font-size: 10px;
+}

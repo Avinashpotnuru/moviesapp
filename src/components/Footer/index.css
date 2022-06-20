@@ -1,0 +1,18 @@
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  background-size: cover;
+  width: 100%;
+  line-height: 0;
+}
+.footer-icon {
+  margin: 10px;
+  color: white;
+}
+.contact-heading {
+  color: white;
+  font-size: 14px;
+}

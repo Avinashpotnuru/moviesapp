@@ -1,0 +1,20 @@
+.popular-image {
+  width: 150px;
+  margin: 10px;
+}
+@media screen and (max-width: 768px) {
+  .popular-image {
+    max-width: 100px;
+  }
+}
+
+.popular-video-list-container {
+  margin: 0px;
+}
+
+.popular-video-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
