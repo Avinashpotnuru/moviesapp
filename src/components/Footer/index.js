@@ -1,4 +1,5 @@
 import {FaGoogle, FaTwitter, FaYoutube, FaInstagram} from 'react-icons/fa'
+import {HiOutlineSearch} from 'react-icons/hi'
 import MovieContext from '../../context/MovieContext'
 
 import './index.css'
@@ -16,9 +17,9 @@ const Footer = () => (
             <FaTwitter size={30} className="footer-icon" />
             <FaYoutube size={30} className="footer-icon" />
             <FaInstagram size={30} className="footer-icon" />
+            <HiOutlineSearch size={30} className="footer-icon" />
           </div>
           <p className="contact-heading">Contact us</p>
-          <h1 className="watermark">Developed by Avinash</h1>
         </div>
       )
     }}

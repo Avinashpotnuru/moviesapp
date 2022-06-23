@@ -58,7 +58,6 @@ class App extends Component {
             path="/movies/:id"
             component={MovieItemDetails}
           />
-
           <Route exact path="/not-found" component={NotFound} />
           <Redirect to="/not-found" />
         </Switch>

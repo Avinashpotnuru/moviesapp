@@ -247,4 +247,5 @@ class MovieItem extends Component {
     )
   }
 }
+
 export default withRouter(MovieItem)

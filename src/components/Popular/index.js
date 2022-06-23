@@ -30,4 +30,5 @@ class Popular extends Component {
     )
   }
 }
+
 export default Popular

@@ -1,12 +1,8 @@
-.search-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 80vh;
-}
-.search-main-container {
-  display: flex;
-  flex-direction: column;
+.search-route {
   background-color: black;
-  justify-content: space-between;
   min-height: 100vh;
+}
+.failure-view {
+  padding-top: 80px;
+  color: white;
 }

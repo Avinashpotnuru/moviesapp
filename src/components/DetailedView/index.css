@@ -1,0 +1,40 @@
+.detailed-banner-title {
+  top: 50px;
+}
+ul {
+  list-style: none;
+  margin-left: 0px;
+
+  padding-left: 0px;
+}
+
+li {
+  margin-left: 0px;
+}
+
+.heading {
+  color: #94a3b8;
+}
+
+.budget {
+  margin-right: 20px;
+}
+/* 
+.similar-movie-item{
+    width
+} */
+.similar-movies-list-items {
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.similar-movies-title {
+  font-family: 'HK Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 31px;
+}
+
+.p-1 {
+  padding: 10px;
+}

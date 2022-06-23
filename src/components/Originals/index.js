@@ -8,10 +8,6 @@ import LoadingElement from '../LoaderElement'
 
 import MovieContext from '../../context/MovieContext'
 
-// eslint-disable-next-line import/no-unresolved
-
-// import './index.css'
-
 const apiConstants = {
   initial: 'INITIAL',
   inProgress: 'INPROGRESS',
@@ -172,4 +168,5 @@ class Originals extends Component {
     )
   }
 }
+
 export default Originals

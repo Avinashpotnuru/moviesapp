@@ -73,7 +73,7 @@ class Home extends Component {
 
       return (
         <div
-          className="spider-man-container"
+          className="spiderman-container"
           style={{
             backgroundImage: `url(${backgroundImage})`,
             backgroundSize: '100% 100%',

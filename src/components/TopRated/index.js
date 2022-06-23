@@ -167,4 +167,5 @@ class TopRated extends Component {
     )
   }
 }
+
 export default TopRated

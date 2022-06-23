@@ -1,129 +1,84 @@
-import {Component} from 'react'
-import {Link, withRouter} from 'react-router-dom'
 import {HiOutlineSearch} from 'react-icons/hi'
-import {MdCancel} from 'react-icons/md'
-import {CgPlayList} from 'react-icons/cg'
-
-import MovieContext from '../../context/MovieContext'
+import {Link} from 'react-router-dom'
 
 import './index.css'
 
-class Header extends Component {
-  state = {isMenu: false}
-
-  render() {
-    const {isMenu} = this.state
-
-    return (
-      <MovieContext.Consumer>
-        {value => {
-          const {cartList} = value
-          console.log('Header', cartList)
-
-          const clickToClose = () => {
-            this.setState(prevState => ({isMenu: !prevState.isMenu}))
-          }
-
-          return (
-            <nav className="nav-header" testid="header">
-              <div className="nav-content">
-                <div className="nav-bar-large-container">
-                  <Link to="/home">
-                    <img
-                      className="website-logo"
-                      src="https://res.cloudinary.com/dtjcxf7z5/image/upload/v1650191862/Mini%20Project%20Netflix%20Clone/MoviesIcon_snclt2.png"
-                      alt="website logo"
-                    />
-                  </Link>
-
-                  <ul className="nav-menu">
-                    <Link to="/" className="nav-link">
-                      <li className="nav-menu-item">Home</li>
-                    </Link>
-
-                    <Link to="/popular" className="nav-link">
-                      <li className="nav-menu-item">Popular</li>
-                    </Link>
-                  </ul>
-
-                  <ul className="nav-menu-profile">
-                    <Link to="/search" className="nav-link">
-                      <li className="nav-menu-item">
-                        <button
-                          type="button"
-                          testid="searchButton"
-                          className="search-button"
-                        >
-                          <HiOutlineSearch size={25} color="white" />
-                        </button>
-                      </li>
-                    </Link>
-                    <Link to="/account" className="nav-link">
-                      <li className="nav-menu-item">
-                        <img
-                          src="https://res.cloudinary.com/dtjcxf7z5/image/upload/v1650194938/Mini%20Project%20Netflix%20Clone/Avatar_ayfkv8.png"
-                          alt="profile"
-                          className="profile"
-                        />
-                      </li>
-                    </Link>
-                    <ul className="nav-menu-mobile">
-                      <Link to="/search" className="nav-link">
-                        <li className="nav-menu-item-mobile">
-                          <button
-                            type="button"
-                            testid="searchButton"
-                            className="search-button"
-                          >
-                            <HiOutlineSearch size={25} color="white" />
-                          </button>
-                        </li>
-                      </Link>
-                      <li className="nav-menu-item-mobile">
-                        <button
-                          type="button"
-                          onClick={clickToClose}
-                          className="nav-button"
-                        >
-                          <CgPlayList size={25} color="white" />
-                        </button>
-                      </li>
-                    </ul>
-                  </ul>
-                </div>
-              </div>
-
-              {isMenu ? (
-                <ul className="nav-menu-mobile">
-                  <ul className="nav-menu-list-mobile">
-                    <Link to="/" className="nav-link">
-                      <li className="nav-menu-item-mobile">Home</li>
-                    </Link>
-                    <Link to="/popular" className="nav-link">
-                      <li className="nav-menu-item-mobile">Popular</li>
-                    </Link>
-                    <Link to="/account" className="nav-link">
-                      <li className="nav-menu-item-mobile">Account</li>
-                    </Link>
-
-                    <li className="nav-menu-item-mobile">
-                      <button
-                        type="button"
-                        onClick={clickToClose}
-                        className="nav-button"
-                      >
-                        <MdCancel size={25} color="white" />
-                      </button>
-                    </li>
-                    {/* Add close button and change the state of the object so that */}
-                  </ul>
-                </ul>
-              ) : null}
-            </nav>
-          )
-        }}
-      </MovieContext.Consumer>
-    )
+const Header = props => {
+  const {search, SearchFun} = props
+  let enteredInput = ''
+  const inputEntered = event => {
+    enteredInput = event.target.value
   }
+
+  const searchButtonClicked = () => {
+    SearchFun(enteredInput)
+  }
+
+  return (
+    <div className="header col-12" testid="header">
+      <ul className="header-list-items d-flex flex-row justify-content-space-between">
+        <li className="d-flex flex-row color-w">
+          <Link to="/">
+            <img
+              className="img"
+              alt="website logo"
+              src="https://res.cloudinary.com/dnjuzbuoz/image/upload/v1655456206/Group_7399_tjbtzb.png"
+            />
+          </Link>
+          <Link to="/">
+            <p className="color-w ml-3 head">Home</p>
+          </Link>
+          <Link to="/popular">
+            <p className="color-w ml-1 head">Popular</p>
+          </Link>
+        </li>
+
+        <li className="d-flex flex-row">
+          <div className="search d-flex flex-row align-items-center">
+            {search === 'true' && (
+              <div className="d-flex flex-row search-input-container m-1">
+                <input
+                  onChange={inputEntered}
+                  className="search-input"
+                  type="search"
+                />
+                <button
+                  type="button"
+                  testid="searchButton"
+                  onClick={searchButtonClicked}
+                  className="button"
+                  alt="searchButton"
+                >
+                  <HiOutlineSearch />
+                </button>
+              </div>
+            )}
+            {search !== 'true' && (
+              <Link to="/search">
+                <button
+                  type="button"
+                  testid="searchButton"
+                  className="search-button"
+                  alt="searchButton"
+                >
+                  <HiOutlineSearch />
+                </button>
+              </Link>
+            )}
+          </div>
+          <div>
+            <Link to="/Account">
+              <button type="button" className="profile-button">
+                <img
+                  alt="profile"
+                  src="https://res.cloudinary.com/dnjuzbuoz/image/upload/v1655477627/Avatar_v4saqp.png"
+                />
+              </button>
+            </Link>
+          </div>
+        </li>
+      </ul>
+    </div>
+  )
 }
-export default withRouter(Header)
+export default Header
